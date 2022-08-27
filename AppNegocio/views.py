@@ -27,3 +27,11 @@ def formulario_negocio(request):
         
         miFormularioNegocio = FormularioNegocio()
     return render(request, 'AppNegocio/hijo.html', {"miFormularioNegocio":miFormularioNegocio})
+
+def buscar_negocio(request):
+    if request.method == 'POST':
+        nombre_negocio = request.POST["nombre"]
+        negocios_buscados = Negocio.objects.filter(nombre__icontains = nombre_negocio)
+        return render (request, "AppNegocio/resultado_negocios.html", {"negocios": negocios_buscados})
+    else:
+        return render(request, 'AppNegocio/buscar_negocios.html')

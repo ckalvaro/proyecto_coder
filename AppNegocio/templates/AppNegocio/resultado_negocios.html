@@ -1,0 +1,28 @@
+{% extends "AppNegocio/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!-- <form method="get" action=""> {% csrf_token %} corroborar si pega en sí mismo-->
+<table>
+    {% if negocios %}
+
+        {% for negocio in negocios %}
+
+        <ul>
+
+            <li>{{ negocio.nombre }}</li>
+            <li>{{ negocio.rubro }}</li>
+            <li>{{ negocio.direccion }}</li>
+            <li>{{ negocio.codigo_postal }}</li>
+
+        </ul>
+
+        {% endfor %}
+
+    {% endif %}
+
+</table>
+
+<input type="submit" value="Buscar">
+
+<!-- </form> -->
+{% endblock %}

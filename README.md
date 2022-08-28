@@ -13,11 +13,11 @@ proyecto final coderhouse
 
 1- En admin.py hacer importación de models:
 
-   from django.contrib import admin
-   from .models import*
+    from django.contrib import admin
+    from .models import*
    
 2- En admin.py agregar todos los modelos de la siguiente forma:
 
-   admin.site.register(Nombre_de_objeto)
+    admin.site.register(Nombre_de_objeto)
 
     

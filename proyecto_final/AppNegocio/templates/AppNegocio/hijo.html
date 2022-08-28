@@ -1,0 +1,13 @@
+{% extends "AppNegocio/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<form method="post" action="{% url 'formulario_negocio' %}"> {% csrf_token %}
+<table>
+    {{ miFormularioNegocio.as_table }}
+</table>
+
+<input type="submit" value="Enviar">
+
+</form>
+<h2> {{ mensaje }} </h2>
+{% endblock %}

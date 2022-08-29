@@ -18,7 +18,7 @@ def formulario_negocio(request):
             codigo_postal = infoFormularioNegocio.get('codigo_postal')
             negocio1 = Negocio(nombre = nombre, rubro = rubro, direccion = direccion, codigo_postal = codigo_postal)
             negocio1.save()
-            mensaje = "Carga exitosa"
+            mensaje = "¡Carga exitosa!"
             return render(request, 'AppNegocio/hijo.html', {"mensaje":mensaje})
         else:
             mensaje = "Formulario Inválido"

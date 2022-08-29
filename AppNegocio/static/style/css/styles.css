@@ -29,12 +29,34 @@ table {
   caption-side: bottom;
     /* border-collapse: collapse; */
     font-size: 1.5rem;
-    
+    margin: auto;
 }
 
 .btn-negocio {
   margin-top: 7%;
 }
+
+.msj-form-negocio{
+  margin: 10rem 0;
+  text-align: center;
+}
+
+.form-buscador-negocio {
+  text-align: center;
+  font-size: x-large;
+}
+
+.resultado-negocio-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultado-negocio-card {
+  margin: 1%;
+  border: 1px gray solid;
+  border-radius: 5px;
+}
+
 
  /*código de boostrap*/
 :root {                          

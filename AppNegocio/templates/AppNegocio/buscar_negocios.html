@@ -2,12 +2,17 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
-<form action = "" method = "POST"> {% csrf_token %}
+<div class="text-center mb-5">
+    <h2 class="fw-bolder">Búsqueda de negocio</h2>
+    <p class="lead mb-0">Utilizá nuestro buscador</p>
+</div>
+
+
+<form action = "" method = "POST" class="form-buscador-negocio"> {% csrf_token %}
 
     <input type = "text" name = "nombre" id = "nombre" placeholder = "nombre del negocio"/>
-
-
     <input type = "submit" value = "buscar" />
 
 </form>
+
 {% endblock %}

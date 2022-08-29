@@ -48,13 +48,20 @@ table {
 
 .resultado-negocio-container {
   display: flex;
-  flex-direction: column;
+  width: 90%;
+  align-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  height: fit-content;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .resultado-negocio-card {
-  margin: 1%;
+  margin: 5%;
   border: 1px gray solid;
   border-radius: 5px;
+
 }
 
 
@@ -4560,12 +4567,13 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  /*min-width: 0;*/
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  width: 15rem;
 }
 .card > hr {
   margin-right: 0;

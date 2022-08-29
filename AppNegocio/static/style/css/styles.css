@@ -12,14 +12,15 @@
  */
 
 .form-container {
-  margin: auto;
+  margin: 10% auto;
   display: flex;
-  flex-direction: row-reverse;
+  align-items: center;
 }
 
 .form-negocio {
   border: solid 1px gray;
-    margin: 5%;
+  width: 80%;
+    margin: 5% auto;
     padding: 5%;
     border-radius: 5px;
 }
@@ -32,7 +33,7 @@ table {
 }
 
 .btn-negocio {
-  margin: auto;
+  margin-top: 7%;
 }
 
  /*código de boostrap*/

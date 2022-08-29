@@ -4,29 +4,35 @@
 
 {% block contenidoQueCambia %}
 
+    {% if miFormularioNegocio != null %}
 
-    <div class="text-center mb-5">
-        <h2 class="fw-bolder">Registro de negocio</h2>
-        <p class="lead mb-0">Completá el siguiente formulario</p>
-    </div>
 
-    <div class="form-container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">Registro de negocio</h2>
+                <p class="lead mb-0">Completá el siguiente formulario</p>
+            </div>
 
-            <form method="post" action="{% url 'formulario_negocio' %}" class="form-negocio"> {% csrf_token %}
+            <div class="form-container">
 
-                    <table>
+                    <form method="post" action="{% url 'formulario_negocio' %}" class="form-negocio"> {% csrf_token %}
 
-                        {{ miFormularioNegocio.as_table }}
+                            <table>
 
-                    </table>
+                                {{ miFormularioNegocio.as_table }}
 
-                    <input type="submit" value="Enviar">
+                            </table>
 
-            </form>
-    
-    </div>
+                            <input class= "btn btn-primary btn-lg px-4 me-sm-3 btn-negocio" type="submit" value="Enviar">
 
-<h2> {{ mensaje }} </h2>
+                    </form>
+            
+            </div>
+
+    {% else %}
+
+            <h2 class="fw-bolder msj-form-negocio"> {{ mensaje }} </h2>
+
+    {% endif %}
 
 {% endblock %}
 

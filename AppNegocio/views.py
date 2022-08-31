@@ -19,22 +19,22 @@ def formulario_negocio(request):
             negocio1 = Negocio(nombre = nombre, rubro = rubro, direccion = direccion, codigo_postal = codigo_postal)
             negocio1.save()
             mensaje = "¡Carga exitosa!"
-            return render(request, 'AppNegocio/hijo.html', {"mensaje":mensaje})
+            return render(request, 'AppNegocio/form_negocio.html', {"mensaje":mensaje})
         else:
             mensaje = "Formulario Inválido"
-            return render(request, 'AppNegocio/hijo.html', {"mensaje":mensaje})
+            return render(request, 'AppNegocio/form_negocio.html', {"mensaje":mensaje})
     else: #si el método es GET
         
         miFormularioNegocio = FormularioNegocio()
-    return render(request, 'AppNegocio/hijo.html', {"miFormularioNegocio":miFormularioNegocio})
+    return render(request, 'AppNegocio/form_negocio.html', {"miFormularioNegocio":miFormularioNegocio})
 
 def buscar_negocio(request):
     if request.method == 'POST':
         nombre_negocio = request.POST["nombre"]
         negocios_buscados = Negocio.objects.filter(nombre__icontains = nombre_negocio)
-        return render (request, "AppNegocio/resultado_negocios.html", {"negocios": negocios_buscados})
+        return render (request, "AppNegocio/resultado_negocio.html", {"negocios": negocios_buscados})
     else:
-        return render(request, 'AppNegocio/buscar_negocios.html')
+        return render(request, 'AppNegocio/buscar_negocio.html')
 
 
 def formulario_empleado(request):
@@ -65,3 +65,31 @@ def buscar_empleado(request):
         return render (request, "AppNegocio/resultado_empleado.html", {"empleados": empleados_buscados})
     else:
         return render(request, 'AppNegocio/buscar_empleado.html')
+
+def formulario_producto(request):
+    if request.method == 'POST': #SI EL METODO ES POST
+        miFormularioProducto = FormularioProducto(request.POST)
+        if miFormularioProducto.is_valid():
+            infoFormularioProducto = miFormularioProducto.cleaned_data
+            nombre = infoFormularioProducto.get('nombre')
+            precio = infoFormularioProducto.get('precio')
+            cantidad = infoFormularioProducto.get('cantidad')
+            categoria = infoFormularioProducto.get('categoria')
+            producto1 = Producto(nombre = nombre, precio = precio, cantidad = cantidad, categoria = categoria)
+            producto1.save()
+            mensaje = "¡Carga exitosa!"
+            return render(request, 'AppNegocio/form_producto.html', {"mensaje":mensaje})
+        else:
+            mensaje = "Formulario Inválido"
+            return render(request, 'AppNegocio/form_producto.html', {"mensaje":mensaje})
+    else: #si el método es GET
+        miFormularioProducto = FormularioProducto()
+    return render(request, 'AppNegocio/form_producto.html', {"miFormularioProducto":miFormularioProducto})
+
+def buscar_producto(request):
+    if request.method == 'POST':
+        nombre_producto = request.POST["nombre"]
+        productos_buscados = Producto.objects.filter(nombre__icontains = nombre_producto)
+        return render (request, "AppNegocio/resultado_producto.html", {"productos": productos_buscados})
+    else:
+        return render(request, 'AppNegocio/buscar_producto.html')

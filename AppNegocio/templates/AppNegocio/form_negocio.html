@@ -14,7 +14,7 @@
 
             <div class="form-container">
 
-                    <form method="post" action="{% url 'formulario_negocio' %}" class="form-negocio"> {% csrf_token %}
+                    <form method="post" action="{% url 'formulario_negocio' %}" class="form-carga"> {% csrf_token %}
 
                             <table>
 
@@ -22,7 +22,7 @@
 
                             </table>
 
-                            <input class= "btn btn-primary btn-lg px-4 me-sm-3 btn-negocio" type="submit" value="Enviar">
+                            <input class= "btn btn-primary btn-lg px-4 me-sm-3 btn-carga" type="submit" value="Enviar">
 
                     </form>
             
@@ -30,7 +30,7 @@
 
     {% else %}
 
-            <h2 class="fw-bolder msj-form-negocio"> {{ mensaje }} </h2>
+            <h2 class="fw-bolder msj-form-carga"> {{ mensaje }} </h2>
 
     {% endif %}
 

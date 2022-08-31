@@ -3,14 +3,14 @@
 {% block contenidoQueCambia %}
 
 <div class="text-center mb-5">
-    <h2 class="fw-bolder">Búsqueda de empleado</h2>
+    <h2 class="fw-bolder">Búsqueda de producto</h2>
     <p class="lead mb-0">Utilizá nuestro buscador</p>
 </div>
 
 
-<form action = "" method = "POST" class="form-buscador-negocio"> {% csrf_token %}
+<form action = "" method = "POST" class="form-buscador"> {% csrf_token %}
 
-    <input type = "text" name = "nombre" id = "nombre" placeholder = "nombre del empleado" required/>
+    <input type = "text" name = "nombre" id = "nombre" placeholder = "nombre del producto" required/>
     <input type = "submit" value = "buscar" />
 
 </form>

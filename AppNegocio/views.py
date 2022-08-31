@@ -35,3 +35,33 @@ def buscar_negocio(request):
         return render (request, "AppNegocio/resultado_negocios.html", {"negocios": negocios_buscados})
     else:
         return render(request, 'AppNegocio/buscar_negocios.html')
+
+
+def formulario_empleado(request):
+    if request.method == 'POST':
+        miFormularioEmpleado = FormularioEmpleado(request.POST)
+        if miFormularioEmpleado.is_valid():
+            infoFormularioEmpleado = miFormularioEmpleado.cleaned_data
+            nombre = infoFormularioEmpleado.get('nombre')
+            apellido = infoFormularioEmpleado.get('apellido')
+            sector = infoFormularioEmpleado.get('sector')
+            edad = infoFormularioEmpleado.get('edad')
+            empleado1 = Empleado(nombre = nombre, apellido = apellido, sector = sector , edad = edad )
+            empleado1.save()
+            mensaje = "¡Carga exitosa!"
+            return render(request, 'AppNegocio/form_empleado.html', {"mensaje":mensaje})
+        else:
+            mensaje = "Formulario Inválido"
+            return render(request, 'AppNegocio/form_empleado.html', {"mensaje":mensaje})
+    else:
+        
+        miFormularioEmpleado = FormularioEmpleado()
+    return render(request, 'AppNegocio/form_empleado.html', {"miFormularioEmpleado":miFormularioEmpleado})
+
+def buscar_empleado(request):
+    if request.method == 'POST':
+        nombre_empleado = request.POST["nombre"]
+        empleados_buscados = Empleado.objects.filter(nombre__icontains = nombre_empleado)
+        return render (request, "AppNegocio/resultado_empleado.html", {"empleados": empleados_buscados})
+    else:
+        return render(request, 'AppNegocio/buscar_empleado.html')

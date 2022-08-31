@@ -8,7 +8,7 @@ def inicio(request):
     return render(request, 'AppNegocio/padre.html')
 
 def formulario_negocio(request):
-    if request.method == 'POST':
+    if request.method == 'POST': #SI EL METODO ES POST
         miFormularioNegocio = FormularioNegocio(request.POST)
         if miFormularioNegocio.is_valid():
             infoFormularioNegocio = miFormularioNegocio.cleaned_data
@@ -23,7 +23,7 @@ def formulario_negocio(request):
         else:
             mensaje = "Formulario Inválido"
             return render(request, 'AppNegocio/hijo.html', {"mensaje":mensaje})
-    else:
+    else: #si el método es GET
         
         miFormularioNegocio = FormularioNegocio()
     return render(request, 'AppNegocio/hijo.html', {"miFormularioNegocio":miFormularioNegocio})

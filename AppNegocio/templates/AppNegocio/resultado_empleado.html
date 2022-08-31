@@ -1,0 +1,42 @@
+{% extends "AppNegocio/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!-- <form method="get" action=""> {% csrf_token %} corroborar si pega en sí mismo-->
+
+<div class="resultado-negocio-container">
+
+        <table>
+
+            {% if empleados %}
+
+                {% for empleado in empleados %}
+            
+                <div class="card h-100 shadow border-0 resultado-negocio-card">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="...">
+                    <div class="card-body p-4">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Vidriera virtual</div>
+                        <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Datos del Empleado</div></a>
+                        <ul>
+                
+                            <li>Nombre:{{ empleado.nombre }}</li>
+                            <li>Apellido:{{ empleado.apellido }}</li>
+                            <li>Sector:{{ empleado.sector }}</li>
+                            <li>Edad:{{ empleado.edad }}</li>
+                
+                        </ul>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        </table>
+
+</div>
+
+
+
+{% endblock %}
+
+

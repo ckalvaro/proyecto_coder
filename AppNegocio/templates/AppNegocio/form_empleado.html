@@ -1,6 +1,8 @@
 {% extends "AppNegocio/padre.html" %}
 {% load static %}
-
+{% block title %}
+Formulario de Carga
+{% endblock %}
 
 {% block contenidoQueCambia %}
 
@@ -14,7 +16,7 @@
 
             <div class="form-container">
 
-                    <form method="post" action="{% url 'formulario_empleado' %}" class="form-carga"> {% csrf_token %}
+                    <form method="post" action="{% url 'AppNegocio:formulario_empleado' %}" class="form-carga"> {% csrf_token %}
 
                             <table>
 
@@ -22,7 +24,7 @@
 
                             </table>
 
-                            <input class= "btn btn-primary btn-lg px-4 me-sm-3 btn-negocio" type="submit" value="Enviar">
+                            <input class= "btn btn-primary btn-lg px-4 me-sm-3 btn-carga" type="submit" value="Enviar">
 
                     </form>
             

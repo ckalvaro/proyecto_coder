@@ -1,5 +1,8 @@
 {% extends "AppNegocio/padre.html" %}
 {% load static %}
+{% block title %}
+Formulario de Carga
+{% endblock %}
 
 
 {% block contenidoQueCambia %}
@@ -14,7 +17,7 @@
 
             <div class="form-container">
 
-                    <form method="post" action="{% url 'formulario_negocio' %}" class="form-carga"> {% csrf_token %}
+                    <form method="post" action="{% url 'AppNegocio:formulario_negocio' %}" class="form-carga"> {% csrf_token %}
 
                             <table>
 

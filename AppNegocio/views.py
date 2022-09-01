@@ -5,7 +5,7 @@ from .models import *
 
 # Create your views here.
 def inicio(request):
-    return render(request, 'AppNegocio/padre.html')
+    return render(request, 'AppNegocio/inicio_negocios.html')
 
 def formulario_negocio(request):
     if request.method == 'POST': #SI EL METODO ES POST

@@ -23,7 +23,7 @@ proyecto final coderhouse
 #Navegación 
 
 1 - Al abrir el proyecto, la primera template que se visualiza es la del inicio del proyecto.
-    1.1 - En ella, tenemos una barra de navegación con botones que permiten acceder a inicio, appnegocio, admin (login de administrador del proyecto) y FAQ (este readme)
+    1.1 - En ella, tenemos una barra de navegación con botones que permiten acceder a inicio, appnegocio, admin (login de administrador del proyecto) y Readme (este readme)
     1.2 - También podemos encontrar dos botones cerca del centro de la pantalla, que también nos permite acceder a la AppNegocio o al Login del Administrador
 
 2 - Barra de navegación (común para todas las templates)
@@ -34,7 +34,7 @@ proyecto final coderhouse
         Este botón nos direcciona a la template de inicio de la aplicación (AppNegocio)
     2.4 - ADMIN
         Este botón nos direcciona a la página de login del administrador del proyecto, generada automáticamente por Django.
-    2.5 - FAQ
+    2.5 - Readme
         Este botón nos direcciona a un link de Github, donde está alojado el proyecto. Específicamente, nos direcciona a este readme con la intención de resolver alguna duda de funcionalidad. 
 
 #APPNEGOCIO
